@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+.audio-player-controls {
+  width: 400px;
+  height: 100px;
+  background-color: rgba(22, 22, 22, 0.9);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#play-pause-btn {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  border-radius: 5rem;
+
+  transition: background-color 0.2s;
+}
+
+#play-pause-btn:hover {
+  background-color: rgba(22, 22, 22, 1);
+}
+
+.time-info {
+  color: white;
+}
+
+.sound-container {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+
+.sound-container:hover,
+.more-options-container:hover {
+  background-color: rgba(22, 22, 22, 1);
+  border-radius: 50%;
+}
+
+.sound-container:hover .volume-bar-frame {
+  visibility: visible;
+  opacity: 1;
+}
+
+.volume-bar-frame {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  bottom: 80%;
+  z-index: 1;
+  padding-bottom: 16px;
+  transition: opacity 0.2s;
+}
+
+.volume-bar-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+
+  background-color: rgba(22, 22, 22, 1);
+  border-radius: 5rem;
+}
+
+#volume-bar {
+  transform: rotate(-90deg);
+}
+
+.more-options-container {
+  position: relative;
+  color: white;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+
+.more-options-panel {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 110%;
+  right: 0;
+  background-color: rgba(22, 22, 22, 1);
+  border-radius: 5rem;
+  padding: 1rem;
+  width: 24rem;
+  font-size: 0.8rem;
+
+  transition: opacity 0.2s;
+}
+
+/* .more-options-container:hover .more-options-panel {
+  visibility: visible;
+  opacity: 1;
+} */
+
+.speed-reprodution {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.speed-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 9rem;
+}
+
+.speed-options .active,
+.speed-options p:hover {
+  font-weight: bold;
+}
+
+input[type="range"] {
+  cursor: pointer;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Audio player</title>
+  </head>
+  <body>
+    <div class="audio-player-container">
+      <audio id="audio-player">
+        <source
+          src="https://freesound.org/data/previews/431/431907_9497060-lq.ogg"
+          type="audio/ogg"
+        />
+        <source
+          src="https://freesound.org/data/previews/431/431907_9497060-lq.mp3"
+          type="audio/mpeg"
+        />
+        Your browser does not support the audio tag.
+      </audio>
+
+      <div class="audio-player-controls">
+        <img
+          id="play-pause-btn"
+          src="./assets/play_arrow-white-48dp.svg"
+          alt="reproduzir áudio"
+          title="Reproduzir"
+        />
+        <div class="time-info">
+          <span id="currentTime"></span>
+          <span>/</span>
+          <span id="totalTime"></span>
+        </div>
+        <div class="progress-bar">
+          <input type="range" id="progress-bar" />
+        </div>
+        <div class="sound-container">
+          <div class="volume-bar-frame">
+            <div class="volume-bar-container">
+              <input
+                type="range"
+                id="volume-bar"
+                min="0"
+                max="100"
+                value="100"
+              />
+            </div>
+          </div>
+          <img
+            id="volume-btn"
+            src="./assets/volume_up-white-48dp.svg"
+            alt="volume"
+            title="Volume"
+          />
+        </div>
+        <div class="more-options-container">
+          <img
+            id="more-options-btn"
+            src="./assets/more_vert-white-48dp.svg"
+            alt="mais opções"
+            title="Mais opções"
+          />
+          <div class="more-options-panel">
+            <div class="speed-reprodution">
+              <p>Velocidade de reprodução</p>
+              <div class="speed-options">
+                <p>0.25x</p>
+                <p>0.5x</p>
+                <p class="active">Normal</p>
+                <p>1.5x</p>
+                <p>2x</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./audioPlayer.js"></script>
+  </body>
+</html>
